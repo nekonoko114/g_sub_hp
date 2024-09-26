@@ -1,0 +1,86 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.top-kv {
+    background: url("#{$imgPath}kv.jpg") no-repeat center bottom / cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    @include mq() {
+        height: 550px;
+    }
+
+    &::after {
+        position:absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 1;
+    }
+    &__wrapper {
+        
+    }
+
+    &__img {
+        width: 50%;
+        background: #7a7a7a;
+        background-image: repeating-linear-gradient(to bottom, #cacaca, #cacaca 1px, transparent 0, transparent 64px), repeating-linear-gradient(to right,#cacaca, #cacaca 1px, transparent 0, transparent 64px);
+        height: 100%;
+        clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        @include mq() {
+            width: 80%;
+        }
+        
+        img {
+            width: 80%;
+            position: absolute;
+            bottom: 0;
+
+            @include mq() {
+                width: 120%;
+                left: -120px;
+            }
+        }
+    }
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, -50%);
+        z-index: 2;
+        text-align: center;
+        // width: 100%;
+
+        @include mq() { 
+            transform: translate(-20%, -90%);
+        }
+    }
+
+    &__cache {
+            font-size: clamp(2rem, 3vw, 5rem);
+            color: #fff;
+            text-shadow: 2px 2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,-2px -2px 0 #000;
+
+            span {
+                color: $accent-color;
+                font-size: clamp(3rem, 3vw, 6rem);
+            }
+
+            @include mq() {
+                width: 350px;
+            }
+    }
+}

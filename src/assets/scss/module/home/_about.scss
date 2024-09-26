@@ -1,0 +1,109 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.about {
+    &__wrapper {
+        height: 100vh;
+
+        @include mq() {
+            height: auto;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+
+        @include mq() {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        background: $main-color;
+        color: #fff;
+        padding: 40px 90px;
+
+        @include mq() {
+            width: 100%;
+            padding: 40px 20px;
+            z-index: 3;
+        }
+    }
+
+    &__ttl {
+        font-size: clamp(2rem, 3vw, 5rem);
+        padding-bottom: 8px;
+        border-bottom: 1px solid #fff;
+
+        
+    }
+
+    &__txt {
+        margin-top: 50px;
+    }
+
+    &__tt {
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+
+
+    &__more {
+        margin: 60px 0;
+
+        @include mq() {
+            text-align: center;
+        }
+
+        a {
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            background: $accent-color;
+            color: #fff;
+            font-weight: bold;
+            font-size: clamp(1rem, 3vw, 2rem);
+        }
+    }
+
+    &__link {
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        a {
+            display: block;
+            img {
+                
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 999px;
+
+                @include mq() {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    &__img {
+        width: 50%;
+        background: url("#{$imgPath}ofice.jpg") no-repeat top right / cover;
+        
+
+        @include mq() {
+            height: 50vh;
+            width: 100%;
+            z-index: 2;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        img {
+
+            
+        }
+    }
+}

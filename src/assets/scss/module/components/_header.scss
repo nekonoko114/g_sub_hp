@@ -1,0 +1,26 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.header  {
+    height: 100px;
+    width: 100%;
+    background: $main-color;
+    display: flex;
+            align-items: center;
+
+    &__logo {
+            
+        p {
+            margin-left: 20px;
+            color: $main-color;
+            font-weight: 900;
+            font-size: clamp(2rem, 3vw, 5rem);
+            text-shadow: 1px 1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,-1px -1px 0 #fff;
+
+
+        }
+    } 
+}

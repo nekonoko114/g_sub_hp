@@ -1,0 +1,96 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.address__ct {  
+    margin-top: 120px;
+    background: url("#{$imgPath}abes.jpg") center center / cover;
+    transform: scale(-1, 1);
+    @include mq() { 
+        width: 100%;
+    }
+        &__wrapper {
+            &__wrap {
+
+                &__left {
+                    text-align: center;
+                    width: 50%;
+                    background: $main-color;            
+                    padding: 120px 80px;
+                    color: #fff;
+                    margin-top: 30px;
+                     transform: scale(-1, 1);
+
+                    @include mq() {
+                        padding: 40px 10px;
+                        width: 60%;
+                    }
+                    &__ttl {
+                        font-size: clamp( 2rem , 3vw, 3rem);
+                        margin-bottom: 40px;
+                        position: relative;
+                        display: inline-block;
+                        &::before,
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 30px;
+                            height: 2px;
+                            background: #fff;
+                            top: 50%;
+                            
+                            transform: translateY(-50%);
+                        }
+
+                        &::before {
+                            left: -40px;
+                        }
+                        &::after {
+                            
+                            right: -40px;
+                            
+                        }
+                    }
+
+                    &__txts {
+                        padding: 10px 0;
+                        border-bottom: 1px solid #fff;
+                    }
+
+                    &__dt {
+                        font-size: clamp( 1rem , 4vw, 2rem);
+                        padding-bottom: 4px;
+                        margin-bottom: 4px;
+                        // position: relative;
+
+                        // &::after {
+                        //     position: absolute;
+                        //     content: "";
+                        //     width: 30%;
+                        //     height: 2px;
+                        //     left: 0;
+                        //     bottom: 0;
+                        //     background: #fff;
+                        // }
+                            
+                        
+
+                    }
+
+                    &__dd {
+                        font-size: clamp( 1rem, 4vw, 1.2rem);
+                        margin-bottom: 4px;
+                    }
+                }
+
+                &__right {
+
+                }
+                
+            }
+
+        }
+
+}

@@ -1,0 +1,101 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+.attempt {
+    padding: 200px 120px;
+    background: $main-color;
+    &__wrapper {
+        color: #fff;
+    }
+
+    &__ttl {
+        font-size: clamp( 1rem, 4vw, 4rem);
+        margin-bottom: 80px;
+    }
+
+    &__content {
+        padding: 20px;
+        
+
+        &__flex {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #fff;
+            border-bottom : 1px solid #fff;
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        &__img {
+            width: 30%;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 90%;
+                height: 100%;
+                background: #fff;
+                top: 0;
+                left: 0;
+                clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+                z-index: 1;
+                filter: blur(5px);
+            }
+            img {
+                position: relative;
+                width: 400px;
+                height: 400px;
+                object-fit: cover;
+                object-position: right center;
+                clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+                z-index: 2;
+                
+            }
+        }
+    }
+
+    &__head {
+        width: 70%;
+        &__ttl {
+            font-size: clamp( 1rem, 4vw, 3rem);
+            margin-bottom: 30px;
+            text-align: center;
+            span.strong {
+                font-size: clamp( 2rem, 5vw, 6rem);
+            }
+
+            span.red {
+                color: rgb(203, 36, 36);
+                text-shadow: 1px 1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,-1px -1px 0 #fff;
+                font-size: clamp( 2rem, 5vw, 5rem);
+            }
+        }
+
+        &__txt {
+            font-size: clamp( 1rem, 4vw, 1.8rem);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+    }
+
+    
+
+    &__body {
+        margin-bottom: 20px;
+        font-size: clamp( 1rem, 4vw, 1.2rem);
+        width: 70%;
+        margin: 0 auto;
+        &__txt {
+            margin-top: 40px;
+            &-strong {
+                font-size: clamp( 1.5rem, 4vw, 1.8rem);
+            }
+        }
+        
+
+
+    }
+}

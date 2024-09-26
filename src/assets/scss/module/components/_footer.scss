@@ -1,0 +1,50 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.footer {
+    color: #fff;
+    padding: 100px 30px;
+    background: linear-gradient(top ,#333, #000, #333);
+
+    @include mq() {
+        padding: 30px 10px;
+    }
+    &__inner {
+        @include mq() {
+            padding: 20px;
+        }
+    }
+
+
+    &__logo {
+        margin-left: 2rem;
+        font-size: 3rem;
+        color: $accent-color;
+        font-weight: 900;
+        text-shadow: 2px 2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,-2px -2px 0 #fff;
+        @include mq() {
+            font-size: clamp( 2rem, 4vw , 3rem);
+            text-shadow: 1px 1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,-1px -1px 0 #fff;
+            margin-left: 0;
+            text-align: center;
+        }
+    }
+    
+
+    
+
+    &__copy {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 14px;
+
+        @include mq() {
+            
+        }
+    }
+
+
+}

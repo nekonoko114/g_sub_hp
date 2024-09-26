@@ -1,0 +1,90 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+.stepup {
+    padding: 120px 0;
+    @include mq() {
+        padding: 40px 0;
+    }
+    &__wrapper {
+
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        background: $main-color;
+
+        @include mq() {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__content {
+        width: 50%;
+        color: #fff;
+        padding: 67px 60px;
+
+        @include mq() {
+            width: 100%;
+            padding: 67px 20px;
+        }
+    }
+
+    &__ttl {
+        font-size: clamp(2rem, 3vw, 3rem);
+        padding-bottom: 8px;
+        border-bottom: 3px solid #fff;
+    }
+
+    &__txt {
+        margin-top: 120px;
+        @include mq() {
+            margin-top: 20px;
+        }
+    }
+
+    &__tt {
+        margin-top: 30px;
+        font-size: 24px;
+
+        @include mq() {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    }
+
+    &__img {
+        width: 50%;
+        background: url("#{$imgPath}abes.jpg") no-repeat center center / cover;
+        
+
+        @include mq() {
+            width: 100%;
+            height: 30vh;
+        }
+    }
+
+    &__more {
+        margin-top: 120px;
+
+        @include mq() {
+            margin-top: 30px;
+        }
+        a {
+            color: #fff;
+            padding: 10px 40px;
+            background: $accent-color;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    }
+
+    
+
+
+}

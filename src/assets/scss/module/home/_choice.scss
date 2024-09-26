@@ -1,0 +1,86 @@
+@use "../setting" as *;
+@use "../mixin" as *;
+@use "../color" as *;
+@use "../variable" as *;
+
+
+
+.choice {
+    @include mq() {
+        padding: 40px 0;
+    }
+    &__wrapper {
+        /* 必要ならここに追加 */
+    }
+
+    &__ttl {
+        font-size: clamp(2rem, 3vw, 4rem);
+        color: #fff;
+        padding-bottom: 8px;
+        border-bottom: #fff solid 3px;
+    }
+
+    
+
+    &__container {
+
+        margin-top: 120px;
+        padding: 120px 120px 300px;
+        background: url("#{$imgPath}forte02.jpg") no-repeat center center / cover;
+
+        @include mq() {
+            padding: 10px 10px 100px;
+        }
+        
+    }
+    &__wrap {
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @include mq() {
+            margin-top: 60px;
+            
+        }
+    }
+
+    &__card {
+        width: 200px;
+        height: auto; /* 高さを自動に */
+        color: #fff;
+        border: #fff solid 1px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;  /* 縦に並べる */
+        justify-content: space-between; /* 要素間のスペースを均等に */
+        padding: 50px 30px;  /* 余白を追加 */
+        margin-top: 10px;
+        @include mq() {
+            width: calc(100% / 2 - 16px);
+            margin: 40px 8px;
+            padding: 30px 10px;  /* 余白を追加 */
+        }
+    }
+
+    
+
+    &__sttl {
+        font-size: 1.5rem;  /* フォントサイズ調整 */
+        @include mq() {
+            font-size: 16px;
+            
+        }
+    }
+
+    &__txt {
+        flex-grow: 1;  /* 残りのスペースをこの要素に割り当てる */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            display: inline-block;
+            line-height: 1.5;
+        }
+    }
+}
